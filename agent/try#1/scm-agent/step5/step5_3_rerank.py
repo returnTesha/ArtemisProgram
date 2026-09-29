@@ -116,7 +116,7 @@ res = client.chat.completions.create(
         {"role": "system", "content": SYSTEM},
         {"role": "user", "content": f"문의: {query}\n\n지식 문서 후보:\n{shortlist_text}"},
     ],
-    temperature=0,  # 재현 가능한 결과를 보려고 무작위성을 끔 (step4에서 본 것처럼 온도가 높으면 결과가 매번 달라진다)
+    temperature=0,  # 재현 가능한 결과를 보려고 무작위성을 끔 (step1_2에서 본 것처럼 온도가 높으면 결과가 매번 달라진다)
     response_format={
         "type": "json_schema",
         "json_schema": {"name": "rerank", "schema": RerankResult.model_json_schema()},
